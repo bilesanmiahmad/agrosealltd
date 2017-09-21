@@ -1,0 +1,14 @@
+{% extends "agrosealapp/base_generic.html" %}
+{% block content %}
+    <h1>Add New Driver</h1>
+    {% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Add New Driver</button>
+    </form>
+{% endblock %}

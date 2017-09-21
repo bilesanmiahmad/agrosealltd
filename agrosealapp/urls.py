@@ -1,0 +1,32 @@
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^add-request/$', views.get_request,),
+    url(r'^$', views.show_dashboard, name='show_dashboard'),
+    url(r'^notifications$', views.show_notifications, name='show_notifications'),
+    url(r'^map$', views.show_map, name='show_map'),
+    url(r'^tmap/$', views.show_tmap, name='show_tmap'),
+    url(r'^drivers/$', views.DriverListView.as_view(), name='drivers'),
+    url(r'^drivers/(?P<pk>\d+)$', views.DriverDetailView.as_view(), name='driver-detail'),
+    url(r'^drivers/create$', views.DriverCreateView.as_view(), name='driver-create'),
+    url(r'^drivers/(?P<pk>\d+)/update/$', views.DriverUpdateView.as_view(), name='driver-update'),
+    url(r'^drivers/(?P<pk>\d+)/delete/$', views.DriverDeleteView.as_view(), name='driver-delete'),
+    url(r'^trucks/$', views.TruckListView.as_view(), name='trucks'),
+    url(r'^trucks/(?P<pk>\d+)$', views.TruckDetailView.as_view(), name='truck-detail'),
+    url(r'^trucks/create$', views.TruckCreateView.as_view(), name='truck-create'),
+    url(r'^trucks/(?P<pk>\d+)/update/$', views.TruckUpdateView.as_view(), name='truck-update'),
+    url(r'^trucks/(?P<pk>\d+)/delete/$', views.TruckDeleteView.as_view(), name='truck-delete'),
+    url(r'^requests/$', views.RequestListView.as_view(), name='requests'),
+    url(r'^requests/(?P<pk>\d+)$', views.RequestDetailView.as_view(), name='request-detail'),
+    url(r'^persons/create$', views.PersonCreateView.as_view(), name='person-create'),
+    url(r'^persons/$', views.PersonListView.as_view(), name='persons'),
+    url(r'^persons/(?P<pk>\d+)/update/$', views.PersonUpdateView.as_view(), name='person-update'),
+    url(r'^persons/(?P<pk>\d+)/delete/$', views.PersonDeleteView.as_view(), name='person-delete'),
+    url(r'^persons/(?P<pk>\d+)$', views.PersonDetailView.as_view(), name='person-detail'),
+    url(r'^companies/$', views.CompanyListView.as_view(), name='companies'),
+    url(r'^companies/(?P<pk>\d+)$', views.CompanyDetailView.as_view(), name='company-detail'),
+    url(r'^companies/create$', views.CompanyCreateView.as_view(), name='company-create'),
+    url(r'^companies/(?P<pk>\d+)/update/$', views.CompanyUpdateView.as_view(), name='company-update'),
+    url(r'^companies/(?P<pk>\d+)/delete/$', views.CompanyDeleteView.as_view(), name='company-delete'),
+]

@@ -1,0 +1,89 @@
+{% extends "agrosealapp/base_generic.html" %}
+{% block content %}
+    <!--page title and breadcrumb start -->
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="page-title"> AgroSEAL Admin Dashboard
+                <small></small>
+            </h1>
+        </div>
+        <div class="col-md-4">
+            <ul class="breadcrumb pull-right">
+                <li>Home</li>
+                <li><a href="#" class="active">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--page title and breadcrumb end -->
+
+    <!--states start-->
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="panel short-states bg-danger">
+                <div class="pull-right state-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="panel-body">
+                    <h1 class="light-txt">{{ num_of_drivers }}</h1>
+                    <div class=" pull-right"></div>
+                        <strong class="text-uppercase">Registered Drivers</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="panel short-states bg-info">
+                <div class="pull-right state-icon">
+                    <i class="fa fa-truck"></i>
+                </div>
+                <div class="panel-body">
+                    <h1 class="light-txt">{{ num_of_trucks }}</h1>
+                    <div class=" pull-right"></div>
+                    <strong class="text-uppercase">Registered Trucks</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="panel short-states bg-warning">
+                <div class="pull-right state-icon">
+                    <i class="fa fa-check-circle"></i>
+                </div>
+                <div class="panel-body">
+                    <h1 class="light-txt">{{ num_of_requests }}</h1>
+                    <div class=" pull-right"></div>
+                    <strong class="text-uppercase">Requests</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--states end-->
+
+    <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <header class="panel-heading">
+                                        Project Statistics
+                                        <span class="tools pull-right">
+                                            <a class="close-box fa fa-times" href="javascript:;"></a>
+                                        </span>
+                                    </header>
+                                    <div class="panel-body">
+                                        <div id="b-line" style="height: 370px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <header class="panel-heading">
+                                        Product Sales
+                                        <span class="tools pull-right">
+                                            <a class="close-box fa fa-times" href="javascript:;"></a>
+                                        </span>
+                                    </header>
+                                    <div class="panel-body">
+                                        <div id="b-area" style="height: 370px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+{% endblock %}

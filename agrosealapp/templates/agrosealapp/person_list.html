@@ -1,0 +1,64 @@
+{% extends "agrosealapp/base_generic.html" %}
+{% block content %}
+
+    <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-title"> AgroSEAL -- Persons List
+                    <small></small>
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb pull-right">
+                    <li>Home</li>
+                    <li><a href="#" class="active">People</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--page title and breadcrumb end -->
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        People Table
+                        <span class="tools pull-right">
+                            <a class="refresh-box fa fa-repeat" href="javascript:;"></a>
+                            <a class="collapse-box fa fa-chevron-down" href="javascript:;"></a>
+                            <a class="close-box fa fa-times" href="javascript:;"></a>
+                        </span>
+                    </header>
+                    <div class="panel-body">
+                        <table class="table  table-hover general-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th> First Name</th>
+                                                        <th class="hidden-phone">Last Name</th>
+                                                        <th>Phone Number</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% if person_list %}
+
+                                                        {% for person in person_list %}
+                                                            <tr>
+                                                                <td><a href="{{ person.pk }}">{{ person.first_name }}</a></td>
+                                                                <td class="hidden-phone">{{ person.last_name }}</td>
+                                                                <td>{{ person.phone }}</td>
+                                                <td>
+                                                    <span><a class="btn btn-primary btn-sm" href="{% url 'person-detail' person.pk %}"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp View</a></span>
+                                                    <span><a class="btn btn-primary btn-sm" href="{% url 'person-update' person.pk %}"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp Edit</a></span>
+                                                    <span><a class="btn btn-danger btn-sm" href="{% url 'person-delete' person.pk %}"><i class="fa fa-trash" aria-hidden="true"></i> &nbsp Delete</a></span>
+                                            </td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <p>There are no persons yet</p>
+                                                    {% endif %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+{% endblock %}

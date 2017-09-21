@@ -1,0 +1,14 @@
+{% extends "agrosealapp/base_generic.html" %}
+{% block content %}
+    <h1>Add New Company</h1>
+    {% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
+    <form method="POST" class="">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Add New Company</button>
+    </form>
+{% endblock %}
