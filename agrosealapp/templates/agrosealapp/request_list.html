@@ -1,10 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "agrosealapp/base_generic.html" %}
+{% block content %}
 
-</body>
-</html>
+    <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-title"> AgroSEAL -- Requests List
+                    <small></small>
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb pull-right">
+                    <li>Home</li>
+                    <li><a href="#" class="active">Requests</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--page title and breadcrumb end -->
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Request Table
+                        <span class="tools pull-right">
+                            <a class="refresh-box fa fa-repeat" href="javascript:;"></a>
+                            <a class="collapse-box fa fa-chevron-down" href="javascript:;"></a>
+                            <a class="close-box fa fa-times" href="javascript:;"></a>
+                        </span>
+                    </header>
+                    <div class="panel-body">
+                        <table class="table  table-hover general-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Customer Name</th>
+                                                        <th>Pickup Location</th>
+                                                        <th>Drop off Location</th>
+                                                        <th>Fruit</th>
+                                                        <th>Quantity</th>
+                                                        <th>Request Time</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% if request_list %}
+
+                                                        {% for request in request_list %}
+                                                            <tr>
+                                                                <td><a href="{{ request.pk }}">{{ request.customer_name }}</a></td>
+                                                                <td>{{ request.pickup_city }}</td>
+                                                                <td>{{ request.dropoff_city }}</td>
+                                                                <td>{{ request.fruit }}</td>
+                                                                <td>{{ request.fruit_quantity }}</td>
+                                                                <td>{{ request.requested_on }}</td>
+                                                <td>
+                                                    <span><a class="btn btn-primary btn-sm" href="{% url 'request-detail' person.pk %}"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp View</a></span>
+                                                </td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <p>There are no persons yet</p>
+                                                    {% endif %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+{% endblock %}

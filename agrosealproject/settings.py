@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = '/agroseal/'
+LOGIN_REDIRECT_URL = '/'
 
 
 # Application definition

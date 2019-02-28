@@ -13,6 +13,18 @@ from agrosealapp.forms import PersonCreateForm, CompanyCreateForm, DriverCreateF
 # Create your views here.
 
 
+class RequestListView(generic.ListView):
+    model = TruckRequest
+    template_name = 'agrosealapp/request_list.html'
+    context_object_name = 'request_list'
+
+
+class RequestDetailView(generic.DetailView):
+    model = TruckRequest
+    template_name = 'agrosealapp/request-detail.html'
+    context_object_name = 'request'
+
+
 class PersonListView(generic.ListView):
     model = Person
     template_name = 'agrosealapp/person_list.html'

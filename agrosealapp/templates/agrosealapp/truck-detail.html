@@ -1,10 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "agrosealapp/base_generic.html" %}
+{% block content %}
+{% load staticfiles %}
+            <!--main content start-->
+            <div id="content" class="ui-content ">
+                <div class="ui-content-body">
 
-</body>
-</html>
+                    <div class="ui-container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel profile-wrap">
+                                    <header class="panel-heading clearfix">
+                                        <h3 class="profile-title pull-left">{{ truck.plate_number }}</h3>
+                                        <div class="pull-right">
+                                            <a href="#" class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></a>
+                                            <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                        </div>
+                                    </header>
+                                    <div class="panel-body row">
+                                        <div class="col-md-4">
+                                            <!--<div class="profile-thumb">-->
+                                                <!--<img src="{% static 'imgs/face.jpg' %}" alt=""/>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="quick-contact">-->
+                                                <!--<a href="#" class="call">-->
+                                                    <!--<i class="fa fa-phone"></i>-->
+                                                    <!--Call Now-->
+                                                <!--</a>-->
+                                                <!--<a href="#" class="mail">-->
+                                                    <!--<i class="fa fa-envelope-o"></i>-->
+                                                    <!--Mail Now-->
+                                                <!--</a>-->
+                                                <!--<a href="#" class="chat">-->
+                                                    <!--<i class="fa fa-comments-o"></i>-->
+                                                    <!--Chat Now-->
+                                                <!--</a>-->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="profile-tabs">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a href="#tab1"data-toggle="tab">Profile Information</a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div id="tab1" class="tab-pane fade in active">
+                                                        <div class="activity-list">
+                                                            <div class="activity-item">
+                                                                <div class="media-body ">
+                                                                    <div class="profile-info">
+                                                                        <h5>General</h5>
+                                                                        <ul class="list-unstyled">
+                                                                            <li>
+                                                                                <i class="fa fa-mortar-board"></i>
+                                                                                <div class="p-i-list">
+                                                                                    <span class="text-muted">Name</span>
+                                                                                    {{ person.first_name }} {{ person.last_name}}
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i class="fa fa-home"></i>
+                                                                                <div class="p-i-list">
+                                                                                    <span class="text-muted">Company</span>
+                                                                                    {{ driver.company }}
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="activity-item">
+                                                                <div class="media-body ">
+                                                                    <div class="profile-info">
+                                                                        <h5>Contact Information</h5>
+                                                                            <ul class="list-unstyled">
+                                                                                <li>
+                                                                                    <i class="fa fa-headphones"></i>
+                                                                                    <div class="p-i-list">
+                                                                                        <span class="text-muted">Mobile Number</span>
+                                                                                        {{ person.phone }}
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <i class="fa fa-phone-square"></i>
+                                                                                    <div class="p-i-list">
+                                                                                        <span class="text-muted">Home Number</span>
+                                                                                        {{ person.phone }}
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <i class="fa fa-envelope-o"></i>
+                                                                                    <div class="p-i-list">
+                                                                                        <span class="text-muted">E-mail</span>
+                                                                                        {{ person.email }}
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <i class="fa fa-map-marker"></i>
+                                                                                    <div class="p-i-list">
+                                                                                        <span class="text-muted">Address</span>
+                                                                                        {{ person.address }}
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--main content end-->
+{% endblock %}
